@@ -92,7 +92,7 @@ func (a ActivationHandler) toggle(reactivationDelay uint) bool {
 	return <-a.queryChannel
 }
 
-// Like toggle(), but only from on to off. Toggling when off will restart the
+// toggleOff; Like toggle(), but only from on to off. Toggling when off will restart the
 // timer.
 func (a ActivationHandler) toggleOff(timeout uint) bool {
 	a.toggleChannel <- ToggleData{

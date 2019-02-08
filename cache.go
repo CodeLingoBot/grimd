@@ -161,7 +161,7 @@ func (c *MemoryCache) Set(key string, msg *dns.Msg, blocked bool) error {
 	return nil
 }
 
-// Remove removes an entry from the cache
+// removeNoLock removes an entry from the cache
 func (c *MemoryCache) removeNoLock(key string) {
 	key = strings.ToLower(key)
 	delete(c.Backend, key)
